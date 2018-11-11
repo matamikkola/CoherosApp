@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CoherosApp </title>
+    <script src="angular.min.js"></script>
+    <script src="coherosApp.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div ng-app="CoherosApp">
+      <div ng-controller="AnimalController">
+        <div>
+          <div class="column">
+            <h3>Animals</h3>
+            <div class="animal capitalize" ng-repeat="animal in animalList | orderBy:'type'" ng-click="countClicked(animal)">{{animal.type}}</div>
+          </div>
+
+          <div class="column">
+            <h3>Animal Classes Clicked</h3>
+            <div class="capitalize" ng-repeat="animalClass in animalClassList | orderBy:'class'"> {{animalClass.class}}  {{animalClass.clicked}}</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
