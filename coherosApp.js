@@ -1,19 +1,20 @@
 angular.module('CoherosApp', [])
 .controller('AnimalController', function($scope){
 
-  $scope.toBeAddedAnimals = {patricia:["mammals","elephant"],simon:["mammals","bunny"],tracy:["birds","seagull"]};
-  $scope.animalValues = Object.values($scope.toBeAddedAnimals);
+  const toBeAddedAnimals = {patricia:["mammals","elephant"],simon:["mammals","bunny"],tracy:["birds","seagull"]};
+
+  const animalValues = Object.values(toBeAddedAnimals);
   $scope.animalList = [];
   $scope.animalClassList = [];
 
   /*Change the input data to more convenient format */
-  for(let i = 0; i < $scope.animalValues.length; i++){
+  for(let i = 0; i < animalValues.length; i++){
     let animal = {
       class:'',
       type:''
     };
-    animal.class = $scope.animalValues[i][0];
-    animal.type = $scope.animalValues[i][1];
+    animal.class = animalValues[i][0];
+    animal.type = animalValues[i][1];
     $scope.animalList.push(animal);
   }
 
